@@ -1,0 +1,28 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: utf-8
+      enabled: true
+
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+      
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:8001/springbootsecurity?serverTimezone=Asia/Seoul
+    username: root
+    password: toor
+    
+  security:
+    user:
+      name: test
+      password: 1234   
+
+mybatis:
+  mapper-locations:
+  - /mappers/*.xml
