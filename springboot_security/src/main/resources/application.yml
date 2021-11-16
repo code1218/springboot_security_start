@@ -1,5 +1,5 @@
 server:
-  port: 8002
+  port: 8000
   servlet:
     context-path: /
     encoding:
@@ -24,9 +24,9 @@ spring:
       password: 1234   
       
 
-#mybatis:
-#  mapper-locations:
-#  - /mappers/*.xml
+mybatis:
+  mapper-locations:
+  - /mappers/*.xml
 
 
 
