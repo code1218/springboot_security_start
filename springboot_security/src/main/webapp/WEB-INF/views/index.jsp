@@ -10,6 +10,5 @@
 	</head>
 	<body>
 		메인페이지
-		${principal.username }
 	</body>
 </html>
