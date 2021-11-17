@@ -39,7 +39,8 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
 		}else if(provider.equals("facebook")) {
 			providerId = (String)attributes.get("id");
 		}else if(provider.equals("naver")) {
-			
+			attributes = (Map<String, Object>)attributes.get("response");
+			providerId = (String)attributes.get("id");
 		}else {
 			providerId = UUID.randomUUID().toString().replaceAll("-", "");
 		}
