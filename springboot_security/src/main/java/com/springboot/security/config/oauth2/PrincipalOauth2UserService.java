@@ -62,6 +62,6 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
 			userEntity = oAuth2UserDto.toEntity();
 			userRepository.signup(userEntity);
 		}
-		return new PrincipalDetails(userEntity);
+		return new PrincipalDetails(userEntity, attributes);
 	}
 }

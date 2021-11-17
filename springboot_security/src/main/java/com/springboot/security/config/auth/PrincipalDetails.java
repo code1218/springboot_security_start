@@ -18,9 +18,17 @@ public class PrincipalDetails implements UserDetails, OAuth2User {
 	private static final long serialVersionUID = 1L;
 	
 	private User user;
+	private Map<String, Object> attributes;
 	
 	public PrincipalDetails(User user) {
+		//일반 로그인
 		this.user = user;
+	}
+	
+	public PrincipalDetails(User user, Map<String, Object> attributes) {
+		//OAuth2 로그인
+		this.user = user;
+		this.attributes = attributes; 
 	}
 
 	@Override //권한이 하나가 아닐 수 있기때문에 Collection(junil아이디가 ROLE_ADMIN, ROLE_USER)
@@ -74,12 +82,12 @@ public class PrincipalDetails implements UserDetails, OAuth2User {
 
 	@Override
 	public Map<String, Object> getAttributes() {
-		return null;
+		return attributes;
 	}
 
 	@Override
 	public String getName() {
-		return null;
+		return (String)attributes.get("name");
 	}
 
 }
