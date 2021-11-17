@@ -2,16 +2,18 @@ package com.springboot.security.config.auth;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Map;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.oauth2.core.user.OAuth2User;
 
 import com.springboot.security.domain.user.User;
 
 import lombok.Data;
 
 @Data
-public class PrincipalDetails implements UserDetails {
+public class PrincipalDetails implements UserDetails, OAuth2User {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -68,6 +70,16 @@ public class PrincipalDetails implements UserDetails {
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
 		return true; //계정을 임시탈퇴
+	}
+
+	@Override
+	public Map<String, Object> getAttributes() {
+		return null;
+	}
+
+	@Override
+	public String getName() {
+		return null;
 	}
 
 }

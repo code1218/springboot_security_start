@@ -10,6 +10,8 @@ import com.springboot.security.domain.user.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 
+//loadUser메소드가 종료시(return) @AuthenticationPrincipal 어노테이션을 사용할 수 있게 만들어 준다.
+//@AuthenticationPrincipal //세션정보를 담는 공간이다.
 @RequiredArgsConstructor
 @Service
 public class PrincipalDetailsService implements UserDetailsService{

@@ -18,6 +18,7 @@ public class User {
 	private String email;
 	private String name;
 	private String role;
+	private String provider;
 	private Date createdate;
 	private Date updatedate;
 }

@@ -23,6 +23,7 @@
 			#{email},
 			#{name},
 			#{role},
+			#{provider},
 			now(),
 			now()
 		);
