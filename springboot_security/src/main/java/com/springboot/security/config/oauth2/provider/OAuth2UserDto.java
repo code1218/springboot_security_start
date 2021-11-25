@@ -24,5 +24,6 @@ public class OAuth2UserDto {
 				.role(role)
 				.provider(provider)
 				.build();
+				
 	}
 }

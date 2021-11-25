@@ -14,39 +14,37 @@ import lombok.Data;
 
 @Data
 public class PrincipalDetails implements UserDetails, OAuth2User {
-	
+
 	private static final long serialVersionUID = 1L;
 	
 	private User user;
 	private Map<String, Object> attributes;
 	
 	public PrincipalDetails(User user) {
-		//일반 로그인
 		this.user = user;
 	}
 	
 	public PrincipalDetails(User user, Map<String, Object> attributes) {
-		//OAuth2 로그인
 		this.user = user;
-		this.attributes = attributes; 
+		this.attributes = attributes;
 	}
-
-	@Override //권한이 하나가 아닐 수 있기때문에 Collection(junil아이디가 ROLE_ADMIN, ROLE_USER)
+	
+	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
+		// TODO Auto-generated method stub
 		Collection<GrantedAuthority> collection = new ArrayList<GrantedAuthority>();
 		collection.add(new GrantedAuthority() {
-			
 			@Override
 			public String getAuthority() {
 				return user.getRole();
 			}
 		});
-		
 		return collection;
 	}
 
 	@Override
 	public String getPassword() {
+		// TODO Auto-generated method stub
 		return user.getPassword();
 	}
 
@@ -59,34 +57,36 @@ public class PrincipalDetails implements UserDetails, OAuth2User {
 	@Override
 	public boolean isAccountNonExpired() {
 		// TODO Auto-generated method stub
-		return true; //계정이 만료됐니?
+		return true;
 	}
 
 	@Override
 	public boolean isAccountNonLocked() {
 		// TODO Auto-generated method stub
-		return true; //계정이 잠겼니?
+		return true;
 	}
 
 	@Override
 	public boolean isCredentialsNonExpired() {
 		// TODO Auto-generated method stub
-		return true; //1년이상 계정을 사용하지않으면 휴먼계정
+		return true;
 	}
 
 	@Override
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
-		return true; //계정을 임시탈퇴
+		return true;
 	}
 
 	@Override
 	public Map<String, Object> getAttributes() {
+		// TODO Auto-generated method stub
 		return attributes;
 	}
 
 	@Override
 	public String getName() {
+		// TODO Auto-generated method stub
 		return (String)attributes.get("name");
 	}
 

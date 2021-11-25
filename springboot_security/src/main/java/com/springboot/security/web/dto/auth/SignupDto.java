@@ -27,5 +27,4 @@ public class SignupDto {
 				.name(name)
 				.build();
 	}
-	
 }

@@ -41,10 +41,10 @@
 							alert('오류코드: ' + respObj.code +
 									'\n오류메세지' + 
 									'\nusername: ' + respObj.msg.username +
-									'\npassword: ' + respObj.msg.password +
-									'\nemail: ' + respObj.msg.email +
-									'\nname: ' + respObj.msg.name);
-						}else if(respObj.code == 410 || respObj.code == 500){
+									'\nusername: ' + respObj.msg.password +
+									'\nusername: ' + respObj.msg.email +
+									'\nusername: ' + respObj.msg.name);
+						}else if(respObj.code == 410){
 							alert('오류코드: ' + respObj.code +
 									'\n오류메세지' + 
 									'\n' + respObj.msg);
